@@ -1,70 +1,74 @@
-# Getting Started with Create React App
+<h1 align="right">🎨 React DALL·E Clone OpenAI</h1>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A simple Dalle clone built with React and Node.js.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 📋 Table of Contents
+- [General Info](#general-info)
+- [Technologies](#technologies)
+- [Setup](#setup)
+- [Sources](#sources)
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🧠 General Info
+This project is a **DALL·E clone** that connects to the **OpenAI API** and generated images using OpenAI’s **DALL·E** model.  
+It demonstrates how to integrate AI-powered image generation into a web app using a **Node.js** backend and a **React** frontend.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+## 🛠️ Technologies
+This project was built with:
+- **JavaScript (ES6+)**
+- **React**
+- **Node.js**
+- **Express**
+- **HTML5**
+- **CSS3**
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+---
 
-### `npm run build`
+## ⚙️ Setup
+To run this project locally:
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### 1️⃣ Clone the repo
+```bash
+git clone https://github.com/kpilszak/react-dalle-clone-openai.git
+```
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 2️⃣ Go into the project folder
+```bash
+cd react-dalle-clone-openai
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+### 3️⃣ Install dependencies
+```bash
+npm install
+```
 
-### `npm run eject`
+### 4️⃣ Add your OpenAI API key to .env
+```bash
+touch .env
+echo "OPENAI_API_KEY=your_api_key_here" > .env
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 5️⃣ Run the app
+Start the backend and frontend (in **separate terminal windows** or **tabs**):
+```bash
+# Terminal 1
+npm run start:backend
+```
+```bash
+# Terminal 2
+npm run start:frontend
+```
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+The frontend will be available at http://localhost:3000 and the backend will run on http://localhost:5000
+ (or your configured port).
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## 📚 Sources
+This project was inspired by and built with the help of  
+**Ania Kubów’s tutorial** → [🛑 1h to code AI Image Variations App (Super simple!) | OpenAI API React Node.js](https://www.youtube.com/watch?v=PVK4_foBnwY)
