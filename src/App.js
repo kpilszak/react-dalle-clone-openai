@@ -10,6 +10,11 @@ const App = () => {
     'A pineapple sunbathing on an island'
   ]
 
+  const surpriseMe = () => {
+    const randomValue = surpriseOptions[Math.floor(Math.random() * surpriseOptions.length)]
+    setValue(randomValue)
+  }
+
   const getImages = async () => {
     try {
       const options = {
@@ -33,7 +38,7 @@ const App = () => {
     <div className="app">
       <section class="search-section">
         <p>Start with a detailed description 
-          <span className="surprise">Surprise me</span>
+          <span className="surprise" onClick={surpriseMe}>Surprise me</span>
         </p>
         <div className="input-container">
           <input 
