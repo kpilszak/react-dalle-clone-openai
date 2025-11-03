@@ -1,4 +1,9 @@
+import { useState } from "react"
+
 const App = () => {
+  const [images, setImages] = useState(null)
+  const [value, setValue] = useState(null)
+
   const surpriseOptions = [
     'A blue ostrich eating melon',
     'A matisse style shark on the telephone',
@@ -18,6 +23,7 @@ const App = () => {
       }
       const response = await fetch('http://localhost:8000/images', options)
       const data = await response.json()
+      setImages(data)
     } catch (error) {
       console.error(error)
     }
@@ -31,12 +37,18 @@ const App = () => {
         </p>
         <div className="input-container">
           <input 
+            value={value}
             placeholder="An impressionist oil painting of a sunflower in a purple vase..."
+            onChange={e => setValue(e.target.value)}
           />
           <button onClick={getImages}>Generate</button>
         </div>
       </section>
-      <section class="image-section"></section>
+      <section class="image-section">
+        {images?.map((image, _index) => (
+          <img key={_index} src={image.url} alt={`Generated image of ${value}`} />
+        ))}
+      </section>
     </div>
   )
 }
