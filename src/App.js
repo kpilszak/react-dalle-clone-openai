@@ -3,6 +3,7 @@ import { useState } from "react"
 const App = () => {
   const [images, setImages] = useState(null)
   const [value, setValue] = useState(null)
+  const [error, setError] = useState(null)
 
   const surpriseOptions = [
     'A blue ostrich eating melon',
@@ -11,11 +12,17 @@ const App = () => {
   ]
 
   const surpriseMe = () => {
+    setImages(null)
     const randomValue = surpriseOptions[Math.floor(Math.random() * surpriseOptions.length)]
     setValue(randomValue)
   }
 
   const getImages = async () => {
+    setImages(null)
+    if (value == null) {
+      setResponseValueAndErrors('Error! Must have a search term')
+      return
+    }
     try {
       const options = {
         method: "POST",
@@ -48,6 +55,7 @@ const App = () => {
           />
           <button onClick={getImages}>Generate</button>
         </div>
+          {error && <p>{error}</p>}
       </section>
       <section class="image-section">
         {images?.map((image, _index) => (
