@@ -4,6 +4,7 @@ const App = () => {
   const [images, setImages] = useState(null)
   const [value, setValue] = useState(null)
   const [error, setError] = useState(null)
+  const [selectedImage, setSelectedImage] = useState(null)
 
   const surpriseOptions = [
     'A blue ostrich eating melon',
@@ -41,6 +42,14 @@ const App = () => {
     }
   }
 
+  const uploadImage = (e) => {
+    console.log(e.target.files[0])
+
+    const formData = new FormData()
+    formData.append('file', e.target.files[0])
+    setSelectedImage(e.target.files[0])
+  }
+
   return (
     <div className="app">
       <section class="search-section">
@@ -55,6 +64,13 @@ const App = () => {
           />
           <button onClick={getImages}>Generate</button>
         </div>
+          <p className="extra-info">Or, 
+            <span>
+              <label htmlFor="files">Upload an image </label>
+              <input onChange={uploadImage} id="file" accept="image/*" type="file" hidden />
+            </span>
+            to edit
+          </p>
           {error && <p>{error}</p>}
       </section>
       <section class="image-section">
