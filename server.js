@@ -5,13 +5,12 @@ const app = express()
 app.use(cors())
 app.use(express.json())
 require('dotenv').config()
-const { Configuration, OpenAIApi } = require("openai")
-const fs = require('fs')
-const multer = require('multer')
-const configuration = new Configuration({
-    apiKey: process.env.OPENAI_API_KEY,
+const OpenAI = require('openai');
+const fs = require('fs');
+const multer = require('multer');
+const openai = new OpenAI({
+    apiKey: process.env.OPENAI_API_KEY
 })
-const openai = new OpenAIApi(configuration)
 const storage = multer.diskStorage({
     destination: (req, file, cb) => {
         cb(null, 'public')
@@ -44,7 +43,7 @@ app.post('/upload', async (req, res) => {
         } else if (err) {
             return res.status(500).json(err)
         }
-    })
+    }) 
 })
 
 app.listen(PORT, () => console.log('Your server is running on PORT ' + PORT))
