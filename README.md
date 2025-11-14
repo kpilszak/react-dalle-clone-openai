@@ -1,4 +1,4 @@
-<h1 align="right">WIP: 🎨 React DALL·E Clone OpenAI</h1>
+<h1 align="right">🎨 React DALL·E Clone OpenAI</h1>
 
 A simple DALL·E clone built with React and Node.js.
 
